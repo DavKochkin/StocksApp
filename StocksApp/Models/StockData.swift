@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StockData: Codable {
+struct StockData: Codable, Identifiable {
     struct MetaData: Codable {
         let information: String
         let symbol: String
@@ -43,8 +43,14 @@ struct StockData: Codable {
         }
     }
     
+    let id = UUID()
+    
     let metaData: MetaData
     let timeSeries5Min: [String: StockDataEntry]
+    
+    var latestClose: String {
+        timeSeries5Min.first?.value.close ?? "" 
+    }
     
     private enum CodingKeys: String, CodingKey {
         case metaData       = "Meta Data"

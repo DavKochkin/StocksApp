@@ -10,9 +10,23 @@ import Combine
 
 final class ContentViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
+    private let symbols: [String] = [
+    "AAPL",
+    "TSLA",
+    "IBM"
+    ]
     
+    @Published var stockData: [StockData] = []
+     
     init() {
-        getStockData(for: "IBM")
+        loadAllSymbols()
+    }
+    
+    func loadAllSymbols() {
+        stockData = []
+        symbols.forEach { symbol in
+            getStockData(for: symbol)
+        }
     }
      
     func getStockData(for symbol: String) {
@@ -36,8 +50,10 @@ final class ContentViewModel: ObservableObject {
                 case .finished:
                     return
                 }
-            } receiveValue: { stockData in
-                print(stockData)
+            } receiveValue: { [unowned self] stockData in
+                DispatchQueue.main.async {
+                    self.stockData.append(stockData)
+                }
             }
             .store(in: &cancellables)
     }
