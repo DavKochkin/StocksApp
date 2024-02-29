@@ -9,27 +9,53 @@ import Foundation
 import Combine
 
 final class ContentViewModel: ObservableObject {
+    private let context = PersistenceController.shared.container.viewContext
+    
     private var cancellables = Set<AnyCancellable>()
-    private let symbols: [String] = [
-    "AAPL",
-    "TSLA",
-    "IBM"
-    ]
     
     @Published var stockData: [StockData] = []
     
     @Published var symbol = ""
+    @Published var stockEntities: [StockEntity] = []
      
     init() {
+        loadFromCoreData()
         loadAllSymbols()
     }
     
-    func loadAllSymbols() {
-        stockData = []
-        symbols.forEach { symbol in
-            getStockData(for: symbol)
+    
+    func loadFromCoreData() {
+        do {
+            stockEntities = try context.fetch(StockEntity.fetchRequest())
+        } catch {
+            print(error)
         }
     }
+    
+    
+    func addStock() {
+        let newStock = StockEntity(context: context)
+        newStock.symbol = symbol
+        
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
+        
+        getStockData(for: symbol)
+        
+        symbol = ""
+    }
+    
+    
+    func loadAllSymbols() {
+        stockData = []
+        stockEntities.forEach { stockEntity in
+            getStockData(for: stockEntity.symbol ?? "")
+        }
+    }
+    
      
     func getStockData(for symbol: String) {
         let url = URL(string: "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=\(symbol)&interval=5min&apikey=F4ANGLCJAAN43D4I")!
