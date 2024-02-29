@@ -17,6 +17,8 @@ final class ContentViewModel: ObservableObject {
     ]
     
     @Published var stockData: [StockData] = []
+    
+    @Published var symbol = ""
      
     init() {
         loadAllSymbols()
