@@ -52,6 +52,14 @@ struct StockData: Codable, Identifiable {
         timeSeries5Min.first?.value.close ?? "" 
     }
     
+    var closeValues: [Double] {
+        let rawValues = timeSeries5Min.values.map { Double($0.close)! }
+        let max       = rawValues.max()!
+        let min       = rawValues.min()!
+        
+        return rawValues.map { ($0 - min * 0.95) / (max - min * 0.95) }
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case metaData       = "Meta Data"
         case timeSeries5Min = "Time Series (5min)"

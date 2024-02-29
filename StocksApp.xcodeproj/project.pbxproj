@@ -18,6 +18,7 @@
 		042AA7A32B8E2E7B008E8012 /* StocksAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7A22B8E2E7B008E8012 /* StocksAppUITestsLaunchTests.swift */; };
 		042AA7B22B8E462C008E8012 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7B12B8E462C008E8012 /* StockData.swift */; };
 		042AA7B52B8E4AFF008E8012 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7B42B8E4AFF008E8012 /* ContentViewModel.swift */; };
+		042AA7B72B90CF46008E8012 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7B62B90CF46008E8012 /* LineChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		042AA7A22B8E2E7B008E8012 /* StocksAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		042AA7B12B8E462C008E8012 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
 		042AA7B42B8E4AFF008E8012 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		042AA7B62B90CF46008E8012 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				042AA7822B8E2E7A008E8012 /* ContentView.swift */,
 				042AA7B42B8E4AFF008E8012 /* ContentViewModel.swift */,
+				042AA7B62B90CF46008E8012 /* LineChart.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				042AA7832B8E2E7A008E8012 /* ContentView.swift in Sources */,
 				042AA7B52B8E4AFF008E8012 /* ContentViewModel.swift in Sources */,
 				042AA78D2B8E2E7B008E8012 /* StocksApp.xcdatamodeld in Sources */,
+				042AA7B72B90CF46008E8012 /* LineChart.swift in Sources */,
 				042AA7B22B8E462C008E8012 /* StockData.swift in Sources */,
 				042AA7812B8E2E7A008E8012 /* StocksAppApp.swift in Sources */,
 			);
