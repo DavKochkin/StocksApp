@@ -17,7 +17,7 @@ final class ContentViewModel: ObservableObject {
     
     @Published var symbol = ""
     @Published var stockEntities: [StockEntity] = []
-     
+    
     init() {
         loadFromCoreData()
         loadAllSymbols()
@@ -27,6 +27,22 @@ final class ContentViewModel: ObservableObject {
     func loadFromCoreData() {
         do {
             stockEntities = try context.fetch(StockEntity.fetchRequest())
+        } catch {
+            print(error)
+        }
+    }
+    
+    
+    func delete(at indexSet: IndexSet) {
+        guard let index = indexSet.first else { return }
+        
+     stockData.remove(at: index)
+        let stockToRemove = stockEntities.remove(at: index)
+        
+        context.delete(stockToRemove)
+        
+        do {
+            try context.save()
         } catch {
             print(error)
         }
@@ -43,6 +59,7 @@ final class ContentViewModel: ObservableObject {
             print(error)
         }
         
+        stockEntities.append(newStock )
         getStockData(for: symbol)
         
         symbol = ""
