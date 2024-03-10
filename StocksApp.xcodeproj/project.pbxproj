@@ -30,6 +30,10 @@
 		0442A23B2B9CB27C00217A09 /* TimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442A23A2B9CB27C00217A09 /* TimelineProvider.swift */; };
 		0442A23D2B9CB2CB00217A09 /* TimelineEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442A23C2B9CB2CB00217A09 /* TimelineEntry.swift */; };
 		0442A2402B9CB30B00217A09 /* StocksWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442A23F2B9CB30B00217A09 /* StocksWidgetView.swift */; };
+		0442A2412B9CB3EE00217A09 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7B62B90CF46008E8012 /* LineChart.swift */; };
+		0442A2422B9CB42A00217A09 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042AA7B12B8E462C008E8012 /* StockData.swift */; };
+		0442A2452B9CB45300217A09 /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442A2442B9CB45300217A09 /* StockService.swift */; };
+		0442A2462B9CB5AF00217A09 /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442A2442B9CB45300217A09 /* StockService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,7 @@
 		0442A23A2B9CB27C00217A09 /* TimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineProvider.swift; sourceTree = "<group>"; };
 		0442A23C2B9CB2CB00217A09 /* TimelineEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEntry.swift; sourceTree = "<group>"; };
 		0442A23F2B9CB30B00217A09 /* StocksWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksWidgetView.swift; sourceTree = "<group>"; };
+		0442A2442B9CB45300217A09 /* StockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +165,7 @@
 		042AA77F2B8E2E7A008E8012 /* StocksApp */ = {
 			isa = PBXGroup;
 			children = (
+				0442A2432B9CB44500217A09 /* Services */,
 				042AA7AF2B8E45FF008E8012 /* Secret */,
 				042AA7B02B8E4612008E8012 /* Models */,
 				042AA7B32B8E4637008E8012 /* Content */,
@@ -245,6 +251,14 @@
 				0442A23F2B9CB30B00217A09 /* StocksWidgetView.swift */,
 			);
 			path = StocksWidget;
+			sourceTree = "<group>";
+		};
+		0442A2432B9CB44500217A09 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0442A2442B9CB45300217A09 /* StockService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +424,7 @@
 			files = (
 				042AA78A2B8E2E7B008E8012 /* Persistence.swift in Sources */,
 				042AA7832B8E2E7A008E8012 /* ContentView.swift in Sources */,
+				0442A2452B9CB45300217A09 /* StockService.swift in Sources */,
 				042AA7B52B8E4AFF008E8012 /* ContentViewModel.swift in Sources */,
 				042AA78D2B8E2E7B008E8012 /* StocksApp.xcdatamodeld in Sources */,
 				042AA7B72B90CF46008E8012 /* LineChart.swift in Sources */,
@@ -443,9 +458,12 @@
 				0442A22D2B9AC9C500217A09 /* AppIntent.swift in Sources */,
 				0442A2272B9AC9C500217A09 /* StocksWidgetBundle.swift in Sources */,
 				0442A23D2B9CB2CB00217A09 /* TimelineEntry.swift in Sources */,
+				0442A2462B9CB5AF00217A09 /* StockService.swift in Sources */,
+				0442A2412B9CB3EE00217A09 /* LineChart.swift in Sources */,
 				0442A2292B9AC9C500217A09 /* StocksWidgetLiveActivity.swift in Sources */,
 				0442A2402B9CB30B00217A09 /* StocksWidgetView.swift in Sources */,
 				0442A23B2B9CB27C00217A09 /* TimelineProvider.swift in Sources */,
+				0442A2422B9CB42A00217A09 /* StockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
